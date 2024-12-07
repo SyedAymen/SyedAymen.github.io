@@ -44,6 +44,37 @@
       s0.parentNode.insertBefore(s1, s0);
     })();
   </script>
+  <script>
+    function obscureText(selector, type = "asterisks") {
+  const targetElement = document.querySelector(selector);
+
+  if (!targetElement) {
+    console.error(`No element found with selector: ${selector}`);
+    return;
+  }
+
+  const originalText = targetElement.textContent;
+
+  let obscuredText = "";
+
+  if (type === "asterisks") {
+    // Replace each character with an asterisk
+    obscuredText = originalText.replace(/./g, "*");
+  } else if (type === "random") {
+    // Replace each character with a random letter
+    obscuredText = originalText.replace(/./g, () =>
+      String.fromCharCode(97 + Math.floor(Math.random() * 26))
+    );
+  } else {
+    console.error("Invalid type specified. Use 'asterisks' or 'random'.");
+    return;
+  }
+
+  targetElement.textContent = obscuredText;
+}
+    obscureText("#myDiv", "asterisks");
+
+  </script>
   <!--End of Tawk.to Script-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./style.css">
@@ -91,7 +122,7 @@
       <div class="card-section is-active" id="about">
         <div class="card-content">
           <div class="card-subtitle">ABOUT</div>
-          <p class="card-desc">Finance Professional by the day, Web Designer by the night.
+          <p class="card-desc aster">Finance Professional by the day, Web Designer by the night.
           </p>
         </div>
         <div class="card-social">
@@ -121,18 +152,18 @@
           <div class="card-subtitle">WORK EXPERIENCE</div>
           <div class="card-timeline">
             <div class="card-item" data-year="2024">
-              <div class="card-item-title">Team Lead at <span>VSA</span></div>
-              <div class="card-item-desc">Managed accounting and compliance for client businesses at the chartered
+              <div class="card-item-title aster">Team Lead at <span>VSA</span></div>
+              <div class="card-item-desc aster">Managed accounting and compliance for client businesses at the chartered
                 accountant firm.</div>
             </div>
             <div class="card-item" data-year="2023">
-              <div class="card-item-title">Equity Research Analyst at <span>FactSet</span></div>
-              <div class="card-item-desc">Specialised at preparing financial data for analysis used by Global clients.
+              <div class="card-item-title aster">Equity Research Analyst at <span>FactSet</span></div>
+              <div class="card-item-desc aster">Specialised at preparing financial data for analysis used by Global clients.
               </div>
             </div>
             <div class="card-item" data-year="2022">
-              <div class="card-item-title">Founder at <span>@lifeatjntuh</span></div>
-              <div class="card-item-desc">Established a student platform for campus students.</div>
+              <div class="card-item-title aster">Founder at <span>@lifeatjntuh</span></div>
+              <div class="card-item-desc aster">Established a student platform for campus students.</div>
             </div>
 
           </div>
@@ -142,7 +173,7 @@
         <div class="card-content">
           <div class="card-subtitle">CONTACT</div>
           <div class="card-contact-wrapper">
-            <div class="card-contact">
+            <div class="card-contact aster">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
@@ -150,14 +181,14 @@
               </svg>
               Hyderabad, India
             </div>
-            <div class="card-contact">
+            <div class="card-contact aster">
               <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path
                   d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
               </svg>+91 9381835648
             </div>
-            <div class="card-contact">
+            <div class="card-contact aster">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
